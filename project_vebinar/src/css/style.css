@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box; /*ця властивість відповідає за правильне відображення властивостей висоти та ширини з врахуванням margin&padding*/
+    margin: 0;
+    padding: 0; /* ці властивості задаються, щоби всі елементи скниули всі свої значення за замовченнямю Їх варто задавати вручну*/
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative; /*треба, щоби встановити позицію absolute для картинки у 3 блоці */
+    width: 1140px;
+    margin: 0 auto; /* відцентровуємо контент по центру */
+    
+}
+
+.promo {
+/* ширину не вказуємо, бо вона буде підлаштуовуватися під ширину екрану девайсу*/ 
+    /*height: 800px;*/
+    /*скорочення для background: прописуємо почергово всі властивості: 
+    background-image background-position background-size background-repeat background-origin background-clip background-attachmentі background-color
+    між двома center center та наступною властивістю обов'зково ставити слеш/ */
+    background: url(../img/main_bg.png) center center/cover no-repeat;
+    padding: 39px 0 62px 0; /*Крайні відступи у блоці краще задавати одразу для всього блоку через padding у section, а не для окремих крайніх елементів через margin*/
+}
+
+.logo .logo_img {
+    margin: 0 auto; /* сама по собі властивість auto не спрацює, бо елемент рядково-блочний, тому треба додати display: block;*/
+    display: block;
+
+}
+
+.logo .logo-text {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    /*line-height: 24px;*/ /*треба бути обережним з цим значенням, бо можуть наїжджати рядки один на інший. Використовувати тільки, коли є кілька рядків тексту. Значення приходить з дизайнерських програм, і зазвичай воно зайве*/
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 14px;
+}
+
+h1 {
+    margin-top: 53px;
+
+
+}
+ 
+.title {
+   
+    color: #f9bf3b;
+    /*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+    font-size: 41px;
+    font-weight: 900;
+    /*line-height: 24px;*/
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2.title {
+    margin-top: 30px;
+}
+
+.simple .title_big {
+   /* Style for "это просто" */
+    color: #ffffff;
+    font-size: 80px;
+    font-weight: 900;
+    /*line-height: 24px;*/
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 21px;
+}
+
+.promo .promo_text {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 28px; /* тут властивість потрібна, щоби контролювати висоту рядків*/
+    text-align: center;
+    padding: 0 13px;
+    margin-top: 23px;
+}
+
+.promo .promo_text span {
+    color: #f9bf3b;
+    font-weight: 700;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 73px;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.18);
+    border: 4px solid rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to top, #2798b9 0%, #3ab6da 100%);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.22);
+    color: #ffffff;
+    font-family: "Roboto Condensed";
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none; /*прибирає обводку кнопки*/
+}
+
+.more { /* задають парметри для всього контейнера*/
+    margin-top: 73px;
+
+}
+.more .more_text {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.more .more_img {
+
+    margin: 0 auto; /* сама по собі властивість auto не спрацює, бо елемент рядково-блочний, тому треба додати display: block;*/
+    display: block;
+    margin-top: 13px;
+}
+
+.waiting {
+    min-height: 604px;
+    background-color: #efefef;
+    padding: 85px 0 75px 0;
+}
+
+.waiting .waiting_header, .finish .finish_header {
+    color: #252525;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.finish .finish_header {
+    color: #efefef;
+}
+
+.waiting .waiting_devider, .finish .finish_devider {
+    width: 217px;
+    height: 4px;
+    background-color: #f9bf3b;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+.waiting .waiting_subheader {
+    margin-top: 17px;
+    color: #4a4a4a;
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.waiting .waiting_wrapper {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.waiting .waiting_wrapper .waiting_item { /*стилізація іконок та тексту на 2-му екрані*/
+    /* в подібних блоках з текстовою частиною не варто задавати фіксовану висоту, бо блок може "поїхати"ю Краще залишити "гумову верстку, яка буде підлаштовуватися під розмір тексту*/ 
+    width: 339px;
+    text-align: center;
+    /*display: inline-block; /*надає блокам властивості рядково-блочного елементу, що дозволяє розмістити елементи в один рядок*/ /*Не використовуємо через застосування технології flex*/
+    /*vertical-align: top; — прибрали, бо використовуємо flex*/
+    /*margin: 0 15px; /*відстань між об'єктами — прибираємо, бо використовуємо flex*/
+}
+
+.waiting .waiting_wrapper .waiting_img {
+    width: 100%; /* властивість не дозволяє зображенню вийти за межі контейнеру*/
+}
+
+.waiting .waiting_descr {
+    color: #4a4a4a;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 33px;
+}
+
+.optimization {
+    min-height: 550px;
+    padding: 102px 0 107px 0;
+}
+
+.optimization .optimization_header {
+    margin-left: 391px;
+    color: #299cbd;
+    font-size: 29px;
+    font-weight: 900;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.optimization .optimization_text {
+    margin-left: 391px;
+    margin-top: 25px;
+    color: #4a4a4a;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+}
+
+.optimization .optimization_text span {
+    font-weight: 700;
+}
+
+.optimization .optimization_img { /*розміщуємо картинку, яка виходить за межі контейнера, під текстом*/
+    position: absolute;
+    top: -54px;
+    left: -240px;
+    z-index: -1; /*розміщуємо картинку під текстом */
+}
+
+.finish {
+    min-height: 447px;
+    padding: 86px 0 79px 0;
+    background: url("../img/background_block_4.png") center center/cover no-repeat;
+}
+
+.finish .finish_wrapper {
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.finish .finish_wrapper .finish_item {
+    width: 204px; /*завжди брати ширину найбільшого елементу з множини*/
+}
+
+.finish .finish_wrapper .finish_item .finish_round {
+    display: flex; /*створюємо флекс всередині самого контейнеру*/
+    justify-content: center;
+    margin: 0 auto; /*треба, щоби точно зцентрувати елементи на сторінці*/
+    align-items: center;
+    width: 115px;
+    height: 115px;
+    background-color: #b4e2ff;
+    border-radius: 100%; /* через пікселі можна задавати скруглення окремого кута*/
+}
+
+.finish .finish_wrapper .finish_item .finish_decsr {
+    margin-top: 25px;
+    text-align: center;
+    color: #efefef;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.gift {
+   min-height: 628px;
+   background-color: #efefef;
+   padding-top: 86px;
+}
+
+.gift .img_gift {
+    width: 154px;
+    height: 174px;
+    display: block;
+    margin: 0 auto;
+}
+
+.gift .gift_text {
+    margin-top: 42px;
+    color: #252525;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 43px;
+    text-align: center;
+}
+
+.gift .gift_btn {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 52px;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.18);
+    border: 4px solid rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to top, #2798b9 0%, #3ab6da 100%);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.22);
+    color: #ffffff;
+    /* font-family: "Roboto Condensed"; */
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none; /*прибирає обводку кнопки*/
+}
+
+.last {
+    min-height: 515px;
+}
+
+.last .img_last {
+    display: block;
+    margin: 0 auto;
+    margin-top: 89px;
+}
+
+.last .last_h2 {
+    margin-top: 37px;
+    color: #252525;
+    /*font-family: Roboto;*/
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.last .last_h2_big {
+    margin-top: 30px;
+    color: #299cbd;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.last .last_text {
+    margin-top: 25px;
+    color: #4a4a4a;
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+.footer {
+    min-height: 166px;
+    background-color: #1a1a1a; 
+    padding-top: 61px;
+}
+
+.footer .footer_text {
+    color: #888888;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: center;
+}
+
+.footer_text, a {
+    color: #888888;
+}
